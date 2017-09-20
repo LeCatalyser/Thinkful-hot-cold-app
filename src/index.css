@@ -1,5 +1,36 @@
 body {
-  margin: 0;
+  margin: 200px;
   padding: 0;
   font-family: sans-serif;
+  background-color: #8c916e;
+}
+
+form {
+  background-color: #e5e5ea;
+  width: 600px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+  font-family: "Pacifico", cursive;
+  animation-timing-function: ease-in-out;
+}
+
+button {
+  background-color: #54b2a9;
+  border-radius: 5px;
+}
+input {
+  border-radius: 5px;
+}
+h1,
+h2 {
+  padding: 25px;
+}
+h1 {
+  color: #ff8362;
+}
+
+h2 {
+  color: #21263a;
 }
