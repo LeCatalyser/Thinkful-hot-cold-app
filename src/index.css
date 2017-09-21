@@ -2,7 +2,7 @@ body {
   margin: 200px;
   padding: 0;
   font-family: sans-serif;
-  background-color: #8c916e;
+  background-color: #21263a;
 }
 
 form {
@@ -19,9 +19,15 @@ form {
 button {
   background-color: #54b2a9;
   border-radius: 5px;
+  font-family: "Pacifico", cursive;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 input {
   border-radius: 5px;
+  font-family: sans-serif;
+  text-align: center;
 }
 h1,
 h2 {
@@ -32,5 +38,5 @@ h1 {
 }
 
 h2 {
-  color: #21263a;
+  color: #8c916e;
 }
