@@ -8,7 +8,9 @@ export default function GuessForm(props) {
       <input
         type="number"
         onChange={e => props.onChange(parseInt(e.target.value))}
-        placeholder="Enter your Guess"
+        maxLength="3"
+        autoComplete="off"
+        required
       />
       <label />
       <button>Guess</button>

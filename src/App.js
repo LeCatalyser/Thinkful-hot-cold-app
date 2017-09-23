@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import GuessForm from "./guess-form";
+import GuessList from "./guess-list";
+import GuessFeedback from "./guess-feedback";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      correctNumber: 18,
-      Guesses: [],
+      correctNumber: Math.floor(Math.random() * 100),
+      guesses: [],
       correctGuess: []
     };
   }
@@ -21,6 +23,7 @@ class App extends Component {
     } else {
       alert("incorrect answer");
     }
+    this.setState({ guesses: [...this.state.guesses, this.state.input] });
   }
 
   guessResponse(guess) {
@@ -34,9 +37,14 @@ class App extends Component {
           onSubmit={guess => this.guessTries(guess)}
           onChange={guess => this.guessResponse(guess)}
         />
+        <GuessList guesses={this.state.guesses} />
+        <GuessFeedback
+          guesses={this.state.guesses}
+          correctNumber={this.state.correctNumber}
+        />
       </div>
     );
   }
 }
 
-export default App;
+export default App; //why would this be here if I am in the root?
