@@ -4,6 +4,8 @@ import "./App.css";
 import GuessForm from "./guess-form";
 import GuessList from "./guess-list";
 import GuessFeedback from "./guess-feedback";
+import TopNav from "./top-nav.js";
+import GuessCount from "./guess-count.js";
 
 class App extends Component {
   constructor(props) {
@@ -19,29 +21,39 @@ class App extends Component {
     e.preventDefault();
     console.log(this.state);
     if (this.state.input === this.state.correctNumber) {
-      alert("correct answer");
     } else {
-      alert("incorrect answer");
     }
-    this.setState({ guesses: [...this.state.guesses, this.state.input] });
+    this.setState({
+      guesses: [...this.state.guesses, this.state.input],
+      input: ""
+    });
   }
 
   guessResponse(guess) {
     this.setState({ input: guess });
   }
 
+  newGame() {
+    this.setState({
+      guesses: [],
+      input: ""
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <GuessForm
-          onSubmit={guess => this.guessTries(guess)}
+          onUserGuessed={guess => this.guessTries(guess)}
           onChange={guess => this.guessResponse(guess)}
+          value={this.state.input}
         />
         <GuessList guesses={this.state.guesses} />
         <GuessFeedback
           guesses={this.state.guesses}
           correctNumber={this.state.correctNumber}
         />
+        <TopNav onNewGame={() => this.newGame()} />
       </div>
     );
   }

@@ -7,8 +7,11 @@ export default function GuessFeedback(props) {
   if (last === undefined) {
     return <section>Take a Guess</section>;
   }
-  if (last > props.correctNumber) {
-    return <section>Cold</section>;
+  const distance = Math.abs(last - props.correctNumber);
+  if (distance === 0) {
+    return <section>Correct Number</section>;
+  } else if (distance < 2) {
+    return <section>Hot</section>;
   }
-  return <section>Hot</section>;
+  return <section>Cold</section>;
 }
