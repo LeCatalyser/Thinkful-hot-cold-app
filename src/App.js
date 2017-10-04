@@ -6,6 +6,7 @@ import GuessList from "./guess-list";
 import GuessFeedback from "./guess-feedback";
 import TopNav from "./top-nav.js";
 import GuessCount from "./guess-count.js";
+import InfoModal from "./info-modal";
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +14,9 @@ class App extends Component {
     this.state = {
       correctNumber: Math.floor(Math.random() * 100),
       guesses: [],
-      correctGuess: []
+      correctGuess: [],
+      input: "",
+      gameInstructions: false
     };
   }
 
@@ -36,7 +39,20 @@ class App extends Component {
   newGame() {
     this.setState({
       guesses: [],
-      input: ""
+      input: "",
+      correctNumber: Math.floor(Math.random() * 100)
+    });
+  }
+
+  gameInstructions() {
+    this.setState({
+      gameInstructions: true
+    });
+  }
+
+  closesInfo(e) {
+    this.setState({
+      gameInstructions: false
     });
   }
 
@@ -53,7 +69,13 @@ class App extends Component {
           guesses={this.state.guesses}
           correctNumber={this.state.correctNumber}
         />
-        <TopNav onNewGame={() => this.newGame()} />
+        <TopNav
+          onNewGame={() => this.newGame()}
+          onInfo={() => this.gameInstructions()}
+        />
+        {this.state.gameInstructions && (
+          <InfoModal onClose={() => this.closesInfo()} />
+        )}
       </div>
     );
   }
