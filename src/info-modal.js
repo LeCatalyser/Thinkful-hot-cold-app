@@ -18,9 +18,9 @@ export default class InfoModal extends React.Component {
           <h1>
             This is a Hot or Cold Number Guessing Game. The game goes like this:
           </h1>
-          <ul>
+          <ul class="instructions">
             <li>
-              1. I pick a random secret number between 1 to 100 and keep it
+              1. Pick a random secret number between 1 to 100 and keep it
               hidden.
             </li>
             <li>
@@ -33,11 +33,9 @@ export default class InfoModal extends React.Component {
           </ul>
         </div>
 
-        <div>
-          <button onClick={e => this.onButton(e)}>Got it</button> //don't I need
-          an anchor tag to link it to the main component?
-        </div>
-        <div>So, Are you ready? Got It!</div>
+        <div />
+        <div class="ready">So, Are you ready?</div>
+        <button onClick={e => this.onButton(e)}>Got it</button>
       </div>
     );
   }

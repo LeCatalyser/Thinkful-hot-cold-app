@@ -1,4 +1,8 @@
 .guessBox {
   display: inline;
-  color: red;
+  color: white;
+}
+
+#guessList {
+  list-style: none;
 }

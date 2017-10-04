@@ -1,0 +1,18 @@
+a {
+  color: #ff8362;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Pacifico", cursive;
+}
+
+li {
+  list-style: none;
+}
+
+div {
+  color: #e5e5ea;
+}
+
+.ready {
+  padding: 15px;
+}

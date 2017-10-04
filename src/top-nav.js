@@ -16,15 +16,15 @@ export default class TopNav extends React.Component {
   render() {
     return (
       <nav>
-        <ul className="clearfix">
+        <ul class="links" className="clearfix">
           <li>
-            <a className="what" href="#" onClick={e => this.onInfo(e)}>
-              what?
+            <a className="What" href="#" onClick={e => this.onInfo(e)}>
+              How do I play?
             </a>
           </li>
           <li>
             <a className="new" href="#" onClick={e => this.onNewGame(e)}>
-              + New onNewGame
+              New Game
             </a>
           </li>
         </ul>
