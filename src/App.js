@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import GuessForm from "./guess-form";
 import GuessList from "./guess-list";
 import GuessFeedback from "./guess-feedback";
 import TopNav from "./top-nav.js";
-import GuessCount from "./guess-count.js";
 import InfoModal from "./info-modal";
 
 class App extends Component {

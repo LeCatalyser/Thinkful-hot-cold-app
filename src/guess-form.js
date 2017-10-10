@@ -9,7 +9,7 @@ export default function GuessForm(props) {
       <h2 class="guess">Make a Guess!</h2>
       <input
         type="number"
-        onChange={e => props.onChange(parseInt(e.target.value))}
+        onChange={e => props.onChange(parseInt(e.target.value, 10))}
         value={props.value}
         maxLength="3"
         autoComplete="off"

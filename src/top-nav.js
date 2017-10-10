@@ -18,12 +18,12 @@ export default class TopNav extends React.Component {
       <nav>
         <ul class="links" className="clearfix">
           <li>
-            <a className="What" href="#" onClick={e => this.onInfo(e)}>
+            <a className="What" onClick={e => this.onInfo(e)}>
               How do I play?
             </a>
           </li>
           <li>
-            <a className="new" href="#" onClick={e => this.onNewGame(e)}>
+            <a className="new" onClick={e => this.onNewGame(e)}>
               New Game
             </a>
           </li>
